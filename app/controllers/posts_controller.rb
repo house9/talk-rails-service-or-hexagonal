@@ -24,10 +24,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    creator = ::PostCreatorService.new
+    creator.create(post_params)
 
     respond_to do |format|
-      if @post.save
+      @post = creator.post
+      if creator.valid_post?
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
