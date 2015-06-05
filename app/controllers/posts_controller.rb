@@ -24,13 +24,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    post = Post.new(post_params)
-
-    if post.save
-      create_success(post)
-    else
-      create_failure(post)
-    end
+    CreatePost.new(self).perform(post_params)
   end
 
   def create_success(post)
