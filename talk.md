@@ -150,17 +150,17 @@ Service Object == PORO
 ----
 Code samples: initial rails app
 
-258b23d2d6da1f91df51c8e9cdd1e9e047f3f1e3 new app
-5d4a1ae90e780ec7f31ebf27863c0fbd33c3954a callback
-
 * new rails app
 * scaffold a Post title, body, published_at
 * post publishing logic
-  * private controller methods (boo)
+  * private controller methods
+    * avoid if possible
   * model callback
+    * [5d4a1ae90e780ec7f31ebf27863c0fbd33c3954a](https://github.com/house9/talk-rails-service-or-hexagonal/commit/5d4a1ae90e780ec7f31ebf27863c0fbd33c3954a)
     * ok when there are very few
     * complexity grows quickly
     * test friction
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -180,7 +180,7 @@ Code samples: initial rails app
 ----
 Code samples: Service object
 
-service-1 branch
+service-1 branch: [3e1f5e1fb03d13e6d9e2f7548e912015ce08f9a7](https://github.com/house9/talk-rails-service-or-hexagonal/commit/3e1f5e1fb03d13e6d9e2f7548e912015ce08f9a7)
 
 * move 'logic' out of callback into Service object
 
@@ -229,8 +229,11 @@ Code samples: Hexagonal 'use case' object
 usecase-1 branch
 
 * add success and failure methods for each action
-* UseCase object tells the controller, the controller does not ask
+  * [49e272aa3fb973225302200edbd8c3e9648052e8](https://github.com/house9/talk-rails-service-or-hexagonal/commit/49e272aa3fb973225302200edbd8c3e9648052e8)
 * move 'logic' out of callback into UseCase object
+  * [93b03d40a654c2bf851f640efc72384589f8b575](https://github.com/house9/talk-rails-service-or-hexagonal/commit/93b03d40a654c2bf851f640efc72384589f8b575)
+* UseCase object tells the controller, the controller does not ask
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
