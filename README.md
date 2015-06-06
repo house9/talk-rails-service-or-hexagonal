@@ -2,7 +2,11 @@
 
 see: talk.md / talk.html
 
-
+* present using Apple TV (1080p)
+* open talk.html in Chrome presentation mode
+  * bump font to 300%
+* open discourse in sublime
+  * bump font
 
 ## Notes
 
